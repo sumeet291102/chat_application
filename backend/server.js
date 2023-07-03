@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-server = app.listen(8000, () => {
+server = app.listen(8080, "0.0.0.0", () => {
   console.log('listening on 8000');
 });
 

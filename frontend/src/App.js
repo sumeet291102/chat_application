@@ -4,7 +4,7 @@ import Chat from './Chat.js';
 import io from "socket.io-client"
 
 
-export const socket = io.connect("http://127.0.0.1:8000");
+export const socket = io.connect("https://main--nimble-lamington-32f1a2.netlify.app/");
 
 
 function App() {
