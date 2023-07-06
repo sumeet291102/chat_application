@@ -18,13 +18,13 @@ io.on('connection', (socket) => {
   //handle kiya hai join request...
   socket.on("join_room", (data) => {
     socket.join(data.room_name);
-    console.log(data);
     io.to(data.room_name).emit("join_room", data);
+    console.log(data);
   })
 
   socket.on("new_chat", (data) => {
-    console.log(data);
     io.emit("new_chat", data);
+    console.log(data);
   })
 
 });

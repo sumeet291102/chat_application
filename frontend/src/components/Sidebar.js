@@ -6,7 +6,7 @@ import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import Avatar from '@mui/material/Avatar';
 import SearchIcon from '@mui/icons-material/Search';
 import SidebarRoom from "./SidebarRoom.js";
-import {socket} from './App';
+import {socket} from '../App.js';
 
 
 function Sidebar(props) {
@@ -34,9 +34,9 @@ function Sidebar(props) {
           <Avatar><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/675px-Black_colour.jpg?20170110114905" alt="profile"></img></Avatar>
         </div>
         <div className="sidebar_header_right">
-          <IconButton><DonutLargeIcon className="status_icon"/></IconButton>
-          <IconButton><ChatIcon className="chat_icon"/></IconButton>
-          <IconButton><MoreVertIcon className="3dot_icon"/></IconButton>
+          <IconButton className="icon-white"><DonutLargeIcon className="status_icon"/></IconButton>
+          <IconButton className="icon-white"><ChatIcon className="chat_icon"/></IconButton>
+          <IconButton className="icon-white"><MoreVertIcon className="3dot_icon"/></IconButton>
         </div>
       </div>
 

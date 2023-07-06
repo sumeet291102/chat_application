@@ -16,15 +16,15 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(90, 103, 128);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(113, 113, 113);
+    background-color: rgb(77, 87, 111);
 
 }
 
-input {
+input, button {
     border: none;
     outline: none;
 }
@@ -32,6 +32,53 @@ input {
 .app {
     display:flex;
     height:100vh;
+}
+
+.pop_up_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0 0 0 / .6);
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.pop_up {
+    border-radius: 8px;
+    background-color: rgb(118, 120, 151);
+    height: 350px;
+    width: 350px;
+    display: flex; 
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.pop_up > * {
+    width: 60%;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.pop_up > label {
+    color: white;
+    margin-bottom: -20px;
+}
+
+.pop_up > input {
+    padding-left: 6px;
+}
+
+.pop_up > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .sidebar {
@@ -46,7 +93,7 @@ input {
 }
 
 .sidebar_header {
-    background-color: rgb(116, 116, 116);
+    background-color: rgb(83, 91, 126);
     align-items: center;
     flex:0.1;
 }
@@ -56,7 +103,7 @@ input {
 }
 
 .sidebar_search {
-    background-color: rgb(199, 199, 199);
+    background-color: rgb(203, 204, 223);
     justify-content: center;
     align-items: center;
     flex:0.1;
@@ -88,7 +135,7 @@ input {
 
 .sidebar_content {
     overflow-y :scroll;
-    background-color: rgb(199, 199, 199);
+    background-color: rgb(203, 204, 223);
     flex:0.8;
     padding-right: calc(5% - 8px);
     padding-left: 5%;
@@ -119,11 +166,16 @@ input {
 .chat_header {
     display:flex;
     align-items: center;
-    background-color: rgb(116, 116, 116);
+    color: white;
+    background-color: rgb(83, 91, 126);
     flex:0.1;
     width:100%;
     padding: 0 2%;
-    border-left: solid rgb(83, 83, 83) 2px;
+    border-left: solid rgb(53, 64, 112) 2px;
+}
+
+.icon-white > .MuiSvgIcon-root {
+    color: rgb(255, 255, 255);
 }
 
 .chat_header_right {
@@ -137,7 +189,7 @@ input {
     display:flex;
     flex-direction: column;
     overflow-y: scroll;
-    background-color: rgb(199, 199, 199);
+    background-color: rgb(203, 204, 223);
     flex:0.8;
     padding: 0 2%;
 }
@@ -155,7 +207,7 @@ input {
 
 .new_chat {
     display:flex;
-    background-color: rgb(199, 199, 199);
+    background-color: rgb(203, 204, 223);
     flex:0.1;
 }
 
@@ -191,5 +243,3 @@ input {
     color: blue;
     font-size: small !important;
 } */
-
-

@@ -5,7 +5,7 @@ import { MoreVert, SearchOutlined } from '@mui/icons-material';
 import ChatMessage from './ChatMessage';
 import SendIcon from '@mui/icons-material/Send';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
-import {socket} from './App';
+import {socket} from '../App.js';
 
 
 
@@ -15,7 +15,7 @@ function Chat(props) {
 
   const handle_submit = (evt) => {
     evt.preventDefault();
-    socket.emit("new_chat", {content:new_message, socket_id:socket.id, room_name:props.room.room_name});
+    socket.emit("new_chat", {content:new_message, socket_id:socket.id, room_name:props.room.room_name, user_name:props.user_name});
     set_new_message("");
   }
 
@@ -34,8 +34,8 @@ function Chat(props) {
               <p>Last seen: {props.room.last_seen}</p>
           </div>
           <div className="chat_header_right_icon">
-            <IconButton><SearchOutlined /></IconButton>
-            <IconButton><MoreVert /></IconButton>
+            <IconButton className="icon-white"><SearchOutlined /></IconButton>
+            <IconButton className="icon-white"><MoreVert /></IconButton>
           </div>
         </div>
       </div>

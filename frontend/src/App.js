@@ -1,7 +1,8 @@
 import {useState, useEffect } from "react"
-import Sidebar from './Sidebar.js';
-import Chat from './Chat.js';
-import io from "socket.io-client"
+import Sidebar from './components/Sidebar.js';
+import Chat from './components/Chat.js';
+import PopUp from './components/PopUp.js';
+import io from "socket.io-client";
 
 
 export const socket = io.connect("https://chat-app-pd1k.onrender.com/");
@@ -13,29 +14,30 @@ function App() {
 
   const [rooms, set_rooms] = useState([{room_name:"common room", room_image:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/675px-Black_colour.jpg?20170110114905", last_seen:timestamp, messages:[]}]);
 
+  const [user_name, set_user_name] = useState("");
 
-  const handle_curr_room = (curr_room_data) => {
-    console.log(curr_room_data.id);
-    console.log(curr_room_data.name);
-  }
 
   const [curr_id, set_curr_id] = useState(0);
 
   const handle_clicked = (id) => {
     set_curr_id(id);
-
   }
   
+
+  const handle_user_name = (ele) => {
+    set_user_name(ele);
+  }
+
   setTimeout(() => {
     rooms.forEach((room, idx) => {
-      if(idx===curr_id) document.querySelector(`.sidebarRoom:nth-child(${idx+1})`).style.backgroundColor="rgb(150, 150, 150)";
+      if(idx===curr_id) document.querySelector(`.sidebarRoom:nth-child(${idx+1})`).style.backgroundColor="rgb(136, 141, 165)";
       else document.querySelector(`.sidebarRoom:nth-child(${idx+1})`).style.backgroundColor="transparent";
     })
   },10);
 
+
   useEffect(() => {
     socket.on("join_room", (data) => {
-      console.log(data.room_name);
 
       let flag=1;
 
@@ -85,12 +87,15 @@ function App() {
   return (
     <div className="app">
       <Sidebar 
-        curr_room={handle_curr_room}
         rooms={rooms}
         clicked={handle_clicked}
       />
       <Chat
         room={rooms[curr_id]}
+        user_name={user_name}
+      />
+      <PopUp
+        user_name={handle_user_name}
       />
     </div>
   );
