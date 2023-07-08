@@ -12,6 +12,7 @@ const io = socket_io(server, {
     cors: {
         origin: "*",
         // Access-Control-Allow-Origin: "*"
+        allowedHeaders: ['Access-Control-Allow-Origin']
     }
 });
 

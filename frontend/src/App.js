@@ -5,7 +5,9 @@ import PopUp from './components/PopUp.js';
 import io from "socket.io-client";
 
 
-export const socket = io.connect("https://chat-app-pd1k.onrender.com/", { transports: ['websocket', 'polling', 'flashsocket'] });
+export const socket = io.connect("https://chat-app-pd1k.onrender.com/", { extraHeaders: {
+  'Access-Control-Allow-Origin': '*'
+  } });
 
 
 function App() {
