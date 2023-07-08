@@ -10,19 +10,7 @@ server = app.listen(port, () => {
 const socket_io = require("socket.io");
 const io = socket_io(server, {
     cors: {
-        origin: "https://main--nimble-lamington-32f1a2.netlify.app/",
-        credentials: true,
-        allowedHeaders: ['Access-Control-Allow-Origin'],
-
-        handlePreflightRequest: (req, res) => {
-          res.writeHead(200, {
-            "Access-Control-Allow-Origin": "https://main--nimble-lamington-32f1a2.netlify.app/",
-            "Access-Control-Allow-Methods": "GET,POST",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Credentials": true
-          });
-          res.end();
-        }
+        origin: "*",
     }
 });
 
