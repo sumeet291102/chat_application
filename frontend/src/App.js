@@ -5,7 +5,7 @@ import PopUp from './components/PopUp.js';
 import io from "socket.io-client";
 
 
-export const socket = io.connect("https://chat-app-pd1k.onrender.com/");
+export const socket = io.connect("https://chat-app-3l21.onrender.com/");
 
 
 function App() {
