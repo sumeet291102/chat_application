@@ -6,6 +6,7 @@ import io from "socket.io-client";
 
 
 export const socket = io.connect("https://chat-app-pd1k.onrender.com/",{
+  withCredentials: true,
   extraHeaders: {
     'Access-Control-Allow-Origin': '*'
   }
