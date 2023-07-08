@@ -5,9 +5,7 @@ import PopUp from './components/PopUp.js';
 import io from "socket.io-client";
 
 
-export const socket = io.connect("https://chat-app-pd1k.onrender.com/", { extraHeaders: {
-  'Access-Control-Allow-Origin': '*'
-  } });
+export const socket = io.connect("https://chat-app-pd1k.onrender.com/");
 
 
 function App() {
