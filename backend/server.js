@@ -11,13 +11,7 @@ const socket_io = require("socket.io");
 const io = socket_io(server, {
     cors: {
         origin: "*",
-
-        handlePreflightRequest: (req, res) => {
-          res.writeHead(200, {
-            "Access-Control-Allow-Origin": "*",
-          });
-          res.end();
-        }
+        allowedHeaders: ['Access-Control-Allow-Origin']
     }
 });
 
