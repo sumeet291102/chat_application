@@ -1,14 +1,17 @@
 const express = require('express');
 const app = express();
 
-server = app.listen(8080, "0.0.0.0", () => {
-  console.log('listening on 8000');
+const port = process.env.PORT || 8080;
+
+server = app.listen(port, () => {
+  console.log(`listening on ${port}`);
 });
 
 const socket_io = require("socket.io");
 const io = socket_io(server, {
     cors: {
-        origin: "*"
+        origin: "*",
+        // Access-Control-Allow-Origin: "*"
     }
 });
 
